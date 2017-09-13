@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:width="@dimen/outerBtn"
+        android:height="@dimen/outerBtn">
+        <shape
+            android:shape="rectangle">
+            <solid android:color="#ffffff"/>
+            <corners android:radius="10dp"/>
+            <stroke android:width="1dp" android:color="#ffffff"/>
+        </shape>
+    </item>
+
+    <item
+        android:drawable="@drawable/hospital"
+        android:width="@dimen/innerBtn"
+        android:height="@dimen/innerBtn"
+        android:top="@dimen/paddingBtn"
+        android:bottom="@dimen/paddingBtn"
+        android:left="@dimen/paddingBtn"
+        android:right="@dimen/paddingBtn">
+    </item>
+</layer-list>

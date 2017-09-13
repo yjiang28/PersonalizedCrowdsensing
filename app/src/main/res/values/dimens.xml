@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="innerBtn">50dp</dimen>
+    <dimen name="outerBtn">68dp</dimen>
+    <dimen name="paddingBtn">9dp</dimen>
+    <dimen name="marginBtn">7dp</dimen>
+    <dimen name="targetBtnsHeight">225dp</dimen>
+
+    <dimen name="filterImg">48dp</dimen>
+    <dimen name="smBtn">32dp</dimen>
+    <dimen name="arrowBtnRadius">34dp</dimen>
+</resources>

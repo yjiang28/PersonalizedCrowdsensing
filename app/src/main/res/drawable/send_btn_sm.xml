@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:width="@dimen/smBtn"
+        android:height="@dimen/smBtn">
+        <shape
+            android:shape="rectangle">
+        </shape>
+    </item>
+
+    <item
+        android:drawable="@drawable/send"
+        android:width="@dimen/smBtn"
+        android:height="@dimen/smBtn">
+    </item>
+</layer-list>

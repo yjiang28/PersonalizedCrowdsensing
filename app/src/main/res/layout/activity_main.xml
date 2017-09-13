@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.yuech.personalizedcrowdsensing.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="352dp"
+        android:layout_height="479dp"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/showInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentTop="true"
+            android:scrollbars="vertical"
+            android:layout_above="@+id/searchbar">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/searchbar"
+            android:layout_width="352dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_above="@+id/targetBtnsWrapper"
+            android:layout_alignParentStart="true">
+
+            <EditText
+                android:id="@+id/userInput"
+                android:layout_width="@dimen/outerBtn"
+                android:layout_height="@dimen/outerBtn"
+                android:layout_margin="@dimen/marginBtn"
+                android:layout_weight="3.28"
+                android:hint="@string/addTarget_hint"
+                android:singleLine="false" />
+
+            <Button
+                android:id="@+id/searchBtn"
+                android:layout_width="@dimen/outerBtn"
+                android:layout_height="@dimen/outerBtn"
+                android:layout_margin="@dimen/marginBtn"
+                android:background="@drawable/plus"
+                android:onClick="onAddTarget"></Button>
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/targetBtnsWrapper"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/targetBtnsHeight"
+            android:layout_above="@+id/dist"
+            android:layout_alignParentStart="true">
+
+            <GridLayout
+                android:id="@+id/grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:columnCount="1"
+                android:gravity="center"
+                android:rowCount="3"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="0dp">
+
+                <LinearLayout
+                    android:id="@+id/btnsRow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <RadioButton
+                        android:id="@+id/target1"
+                        android:button="@null"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="@dimen/outerBtn"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="@dimen/marginBtn"
+                        android:layout_marginRight="@dimen/marginBtn"
+                        android:layout_marginTop="0dp"
+                        android:backgroundTint="@android:color/transparent"
+                        android:drawableTop="@drawable/gas_station_btn"
+                        android:text="gas"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+
+                    <RadioButton
+                        android:id="@+id/target2"
+                        android:button="@null"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="@dimen/outerBtn"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="@dimen/marginBtn"
+                        android:layout_marginRight="@dimen/marginBtn"
+                        android:layout_marginTop="0dp"
+                        android:backgroundTint="@android:color/transparent"
+                        android:drawableTop="@drawable/restaurant_btn"
+                        android:text="resto"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+
+                    <RadioButton
+                        android:id="@+id/target3"
+                        android:button="@null"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="@dimen/outerBtn"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="@dimen/marginBtn"
+                        android:layout_marginRight="@dimen/marginBtn"
+                        android:layout_marginTop="0dp"
+                        android:backgroundTint="@android:color/transparent"
+                        android:drawableTop="@drawable/mall_btn"
+                        android:text="mall"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+
+                    <RadioButton
+                        android:id="@+id/target4"
+                        android:button="@null"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="@dimen/outerBtn"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="@dimen/marginBtn"
+                        android:layout_marginRight="@dimen/marginBtn"
+                        android:layout_marginTop="0dp"
+                        android:backgroundTint="@android:color/transparent"
+                        android:drawableTop="@drawable/bar_btn"
+                        android:text="bar"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnsRow2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <RadioButton
+                        android:id="@+id/target5"
+                        android:button="@null"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="@dimen/outerBtn"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="@dimen/marginBtn"
+                        android:layout_marginRight="@dimen/marginBtn"
+                        android:layout_marginTop="0dp"
+                        android:backgroundTint="@android:color/transparent"
+                        android:drawableTop="@drawable/police_btn"
+                        android:text="police"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+
+                    <RadioButton
+                        android:id="@+id/target6"
+                        android:button="@null"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="@dimen/outerBtn"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="@dimen/marginBtn"
+                        android:layout_marginRight="@dimen/marginBtn"
+                        android:layout_marginTop="0dp"
+                        android:backgroundTint="@android:color/transparent"
+                        android:drawableTop="@drawable/cafe_btn"
+                        android:text="cafe"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+
+                    <RadioButton
+                        android:id="@+id/target7"
+                        android:button="@null"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="@dimen/outerBtn"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="@dimen/marginBtn"
+                        android:layout_marginRight="@dimen/marginBtn"
+                        android:layout_marginTop="0dp"
+                        android:backgroundTint="@android:color/transparent"
+                        android:drawableTop="@drawable/park_btn"
+                        android:text="park"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+
+                    <RadioButton
+                        android:id="@+id/target8"
+                        android:button="@null"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="@dimen/outerBtn"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="@dimen/marginBtn"
+                        android:layout_marginRight="@dimen/marginBtn"
+                        android:layout_marginTop="0dp"
+                        android:backgroundTint="@android:color/transparent"
+                        android:drawableTop="@drawable/market_btn"
+                        android:text="market"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnsRow3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <RadioButton
+                        android:id="@+id/target9"
+                        android:button="@null"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="@dimen/outerBtn"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="@dimen/marginBtn"
+                        android:layout_marginRight="@dimen/marginBtn"
+                        android:layout_marginTop="0dp"
+                        android:backgroundTint="@android:color/transparent"
+                        android:drawableTop="@drawable/postoffice_btn"
+                        android:text="post office"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+
+                    <RadioButton
+                        android:id="@+id/target10"
+                        android:button="@null"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="@dimen/outerBtn"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="@dimen/marginBtn"
+                        android:layout_marginRight="@dimen/marginBtn"
+                        android:layout_marginTop="0dp"
+                        android:backgroundTint="@android:color/transparent"
+                        android:drawableTop="@drawable/road_btn"
+                        android:text="road width"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+
+                    <RadioButton
+                        android:id="@+id/target11"
+                        android:button="@null"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="@dimen/outerBtn"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="@dimen/marginBtn"
+                        android:layout_marginRight="@dimen/marginBtn"
+                        android:layout_marginTop="0dp"
+                        android:backgroundTint="@android:color/transparent"
+                        android:drawableTop="@drawable/hospital_btn"
+                        android:text="hospital"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+
+                    <RadioButton
+                        android:id="@+id/target12"
+                        android:button="@null"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="@dimen/outerBtn"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="@dimen/marginBtn"
+                        android:layout_marginRight="@dimen/marginBtn"
+                        android:layout_marginTop="0dp"
+                        android:backgroundTint="@android:color/transparent"
+                        android:drawableTop="@drawable/washroom_btn"
+                        android:text="washroom"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+                </LinearLayout>
+
+            </GridLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/dist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/marginBtn"
+                android:text="Distance"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
+            <EditText
+                android:id="@+id/minDist"
+                android:layout_width="@dimen/filterImg"
+                android:layout_height="@dimen/filterImg"
+                android:gravity="center"
+                android:hint="min"
+                android:inputType="number" />
+
+            <TextView
+                android:layout_width="@dimen/marginBtn"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="-" />
+
+            <EditText
+                android:id="@+id/maxDist"
+                android:layout_width="@dimen/filterImg"
+                android:layout_height="@dimen/filterImg"
+                android:gravity="center"
+                android:hint="max"
+                android:inputType="number" />
+
+            <Button
+                android:id="@+id/sendRequest"
+                android:layout_width="@dimen/smBtn"
+                android:layout_height="@dimen/smBtn"
+                android:layout_marginLeft="@dimen/marginBtn"
+                android:background="@drawable/send_btn_sm"
+                android:onClick="onChooseTarget">
+
+            </Button>
+        </LinearLayout>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

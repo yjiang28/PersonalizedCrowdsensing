@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Personalized Crowdsensing</string>
+    <string name="help_msg">target1(condition(attribute))</string>
+    <string name="operatorLabel">Operation</string>
+    <string name="addTarget_hint">Add new target</string>
+    <string name="addFilter_hint">+ An alternative filter</string>
+    <string name="sendFilter_hint">Search for targets</string>
+</resources>
