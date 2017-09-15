@@ -36,6 +36,7 @@
             android:gravity="center"
             android:orientation="horizontal"
             android:layout_above="@+id/targetBtnsWrapper"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true">
 
             <EditText
@@ -60,15 +61,15 @@
             android:id="@+id/targetBtnsWrapper"
             android:layout_width="match_parent"
             android:layout_height="@dimen/targetBtnsHeight"
+            android:layout_marginTop="@dimen/marginBtn"
             android:layout_above="@+id/dist"
-            android:layout_alignParentStart="true">
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true">
 
             <GridLayout
                 android:id="@+id/grid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
                 android:columnCount="1"
                 android:gravity="center"
                 android:rowCount="3"
@@ -81,65 +82,105 @@
                     android:layout_height="wrap_content"
                     android:gravity="center">
 
-                    <RadioButton
-                        android:id="@+id/target1"
-                        android:button="@null"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:layout_width="@dimen/outerBtn"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="0dp"
-                        android:layout_marginLeft="@dimen/marginBtn"
-                        android:layout_marginRight="@dimen/marginBtn"
-                        android:layout_marginTop="0dp"
-                        android:backgroundTint="@android:color/transparent"
-                        android:drawableTop="@drawable/gas_station_btn"
-                        android:text="gas"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+                        android:orientation="vertical">
 
-                    <RadioButton
-                        android:id="@+id/target2"
-                        android:button="@null"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:layout_width="@dimen/outerBtn"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="0dp"
-                        android:layout_marginLeft="@dimen/marginBtn"
-                        android:layout_marginRight="@dimen/marginBtn"
-                        android:layout_marginTop="0dp"
-                        android:backgroundTint="@android:color/transparent"
-                        android:drawableTop="@drawable/restaurant_btn"
-                        android:text="resto"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+                        <RadioButton
+                            android:id="@+id/gas"
+                            android:tag="gas"
+                            android:button="@null"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="@dimen/outerBtn"
+                            android:layout_height="@dimen/outerBtn"
+                            android:layout_marginLeft="@dimen/marginBtn"
+                            android:layout_marginRight="@dimen/marginBtn"
+                            android:background="@drawable/gas_station_btn"
+                            android:onClick="onChooseTarget"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
 
-                    <RadioButton
-                        android:id="@+id/target3"
-                        android:button="@null"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:layout_width="@dimen/outerBtn"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="0dp"
-                        android:layout_marginLeft="@dimen/marginBtn"
-                        android:layout_marginRight="@dimen/marginBtn"
-                        android:layout_marginTop="0dp"
-                        android:backgroundTint="@android:color/transparent"
-                        android:drawableTop="@drawable/mall_btn"
-                        android:text="mall"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="gas"/>
+                    </LinearLayout>
 
-                    <RadioButton
-                        android:id="@+id/target4"
-                        android:button="@null"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:layout_width="@dimen/outerBtn"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="0dp"
-                        android:layout_marginLeft="@dimen/marginBtn"
-                        android:layout_marginRight="@dimen/marginBtn"
-                        android:layout_marginTop="0dp"
-                        android:backgroundTint="@android:color/transparent"
-                        android:drawableTop="@drawable/bar_btn"
-                        android:text="bar"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/retaurant"
+                            android:onClick="onChooseTarget"
+                            android:tag="retaurant"
+                            android:button="@null"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="@dimen/outerBtn"
+                            android:layout_height="@dimen/outerBtn"
+                            android:layout_marginLeft="@dimen/marginBtn"
+                            android:layout_marginRight="@dimen/marginBtn"
+                            android:background="@drawable/restaurant_btn"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="restaurant"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/mall"
+                            android:tag="mall"
+                            android:onClick="onChooseTarget"
+                            android:button="@null"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="@dimen/outerBtn"
+                            android:layout_height="@dimen/outerBtn"
+                            android:layout_marginLeft="@dimen/marginBtn"
+                            android:layout_marginRight="@dimen/marginBtn"
+                            android:background="@drawable/mall_btn"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="mall"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/bar"
+                            android:tag="bar"
+                            android:onClick="onChooseTarget"
+                            android:button="@null"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="@dimen/outerBtn"
+                            android:layout_height="@dimen/outerBtn"
+                            android:layout_marginLeft="@dimen/marginBtn"
+                            android:layout_marginRight="@dimen/marginBtn"
+                            android:background="@drawable/bar_btn"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="bar"/>
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -149,65 +190,106 @@
                     android:layout_height="wrap_content"
                     android:gravity="center">
 
-                    <RadioButton
-                        android:id="@+id/target5"
-                        android:button="@null"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:layout_width="@dimen/outerBtn"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="0dp"
-                        android:layout_marginLeft="@dimen/marginBtn"
-                        android:layout_marginRight="@dimen/marginBtn"
-                        android:layout_marginTop="0dp"
-                        android:backgroundTint="@android:color/transparent"
-                        android:drawableTop="@drawable/police_btn"
-                        android:text="police"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+                        android:orientation="vertical">
 
-                    <RadioButton
-                        android:id="@+id/target6"
-                        android:button="@null"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:layout_width="@dimen/outerBtn"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="0dp"
-                        android:layout_marginLeft="@dimen/marginBtn"
-                        android:layout_marginRight="@dimen/marginBtn"
-                        android:layout_marginTop="0dp"
-                        android:backgroundTint="@android:color/transparent"
-                        android:drawableTop="@drawable/cafe_btn"
-                        android:text="cafe"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+                        <RadioButton
+                            android:id="@+id/police"
+                            android:tag="police"
+                            android:button="@null"
+                            android:onClick="onChooseTarget"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="@dimen/outerBtn"
+                            android:layout_height="@dimen/outerBtn"
+                            android:layout_marginLeft="@dimen/marginBtn"
+                            android:layout_marginRight="@dimen/marginBtn"
+                            android:background="@drawable/police_btn"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
 
-                    <RadioButton
-                        android:id="@+id/target7"
-                        android:button="@null"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:layout_width="@dimen/outerBtn"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="0dp"
-                        android:layout_marginLeft="@dimen/marginBtn"
-                        android:layout_marginRight="@dimen/marginBtn"
-                        android:layout_marginTop="0dp"
-                        android:backgroundTint="@android:color/transparent"
-                        android:drawableTop="@drawable/park_btn"
-                        android:text="park"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="police"/>
+                    </LinearLayout>
 
-                    <RadioButton
-                        android:id="@+id/target8"
-                        android:button="@null"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:layout_width="@dimen/outerBtn"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="0dp"
-                        android:layout_marginLeft="@dimen/marginBtn"
-                        android:layout_marginRight="@dimen/marginBtn"
-                        android:layout_marginTop="0dp"
-                        android:backgroundTint="@android:color/transparent"
-                        android:drawableTop="@drawable/market_btn"
-                        android:text="market"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/cafe"
+                            android:tag="cafe"
+                            android:button="@null"
+                            android:onClick="onChooseTarget"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="@dimen/outerBtn"
+                            android:layout_height="@dimen/outerBtn"
+                            android:layout_marginLeft="@dimen/marginBtn"
+                            android:layout_marginRight="@dimen/marginBtn"
+                            android:background="@drawable/cafe_btn"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="cafe"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/park"
+                            android:button="@null"
+                            android:tag="park"
+                            android:onClick="onChooseTarget"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="@dimen/outerBtn"
+                            android:layout_height="@dimen/outerBtn"
+                            android:layout_marginLeft="@dimen/marginBtn"
+                            android:layout_marginRight="@dimen/marginBtn"
+                            android:background="@drawable/park_btn"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="park"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/market"
+                            android:tag="market"
+                            android:button="@null"
+                            android:onClick="onChooseTarget"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="@dimen/outerBtn"
+                            android:layout_height="@dimen/outerBtn"
+                            android:layout_marginLeft="@dimen/marginBtn"
+                            android:layout_marginRight="@dimen/marginBtn"
+                            android:background="@drawable/market_btn"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="market"/>
+                    </LinearLayout>
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -217,65 +299,106 @@
                     android:layout_gravity="center"
                     android:gravity="center">
 
-                    <RadioButton
-                        android:id="@+id/target9"
-                        android:button="@null"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:layout_width="@dimen/outerBtn"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="0dp"
-                        android:layout_marginLeft="@dimen/marginBtn"
-                        android:layout_marginRight="@dimen/marginBtn"
-                        android:layout_marginTop="0dp"
-                        android:backgroundTint="@android:color/transparent"
-                        android:drawableTop="@drawable/postoffice_btn"
-                        android:text="post office"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+                        android:orientation="vertical">
 
-                    <RadioButton
-                        android:id="@+id/target10"
-                        android:button="@null"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:layout_width="@dimen/outerBtn"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="0dp"
-                        android:layout_marginLeft="@dimen/marginBtn"
-                        android:layout_marginRight="@dimen/marginBtn"
-                        android:layout_marginTop="0dp"
-                        android:backgroundTint="@android:color/transparent"
-                        android:drawableTop="@drawable/road_btn"
-                        android:text="road width"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+                        <RadioButton
+                            android:id="@+id/postoffice"
+                            android:tag="postoffice"
+                            android:button="@null"
+                            android:onClick="onChooseTarget"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="@dimen/outerBtn"
+                            android:layout_height="@dimen/outerBtn"
+                            android:layout_marginLeft="@dimen/marginBtn"
+                            android:layout_marginRight="@dimen/marginBtn"
+                            android:background="@drawable/postoffice_btn"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
 
-                    <RadioButton
-                        android:id="@+id/target11"
-                        android:button="@null"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:layout_width="@dimen/outerBtn"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="0dp"
-                        android:layout_marginLeft="@dimen/marginBtn"
-                        android:layout_marginRight="@dimen/marginBtn"
-                        android:layout_marginTop="0dp"
-                        android:backgroundTint="@android:color/transparent"
-                        android:drawableTop="@drawable/hospital_btn"
-                        android:text="hospital"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="post office"/>
+                    </LinearLayout>
 
-                    <RadioButton
-                        android:id="@+id/target12"
-                        android:button="@null"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:layout_width="@dimen/outerBtn"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="0dp"
-                        android:layout_marginLeft="@dimen/marginBtn"
-                        android:layout_marginRight="@dimen/marginBtn"
-                        android:layout_marginTop="0dp"
-                        android:backgroundTint="@android:color/transparent"
-                        android:drawableTop="@drawable/washroom_btn"
-                        android:text="washroom"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/roadwidth"
+                            android:tag="road width"
+                            android:button="@null"
+                            android:onClick="onChooseTarget"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="@dimen/outerBtn"
+                            android:layout_height="@dimen/outerBtn"
+                            android:layout_marginLeft="@dimen/marginBtn"
+                            android:layout_marginRight="@dimen/marginBtn"
+                            android:background="@drawable/road_btn"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="road"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/hospital"
+                            android:tag="hospital"
+                            android:button="@null"
+                            android:onClick="onChooseTarget"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="@dimen/outerBtn"
+                            android:layout_height="@dimen/outerBtn"
+                            android:layout_marginLeft="@dimen/marginBtn"
+                            android:layout_marginRight="@dimen/marginBtn"
+                            android:background="@drawable/hospital_btn"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="hospital"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/washroom"
+                            android:tag="washroom"
+                            android:button="@null"
+                            android:onClick="onChooseTarget"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="@dimen/outerBtn"
+                            android:layout_height="@dimen/outerBtn"
+                            android:layout_marginLeft="@dimen/marginBtn"
+                            android:layout_marginRight="@dimen/marginBtn"
+                            android:background="@drawable/washroom_btn"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"></RadioButton>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="washroom"/>
+                    </LinearLayout>
+
                 </LinearLayout>
 
             </GridLayout>
@@ -286,9 +409,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginTop="@dimen/marginBtn"
             android:gravity="center"
+            android:weightSum="1"
             android:layout_alignParentBottom="true"
-            android:weightSum="1">
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -325,7 +451,7 @@
                 android:layout_height="@dimen/smBtn"
                 android:layout_marginLeft="@dimen/marginBtn"
                 android:background="@drawable/send_btn_sm"
-                android:onClick="onChooseTarget">
+                android:onClick="submitQuery">
 
             </Button>
         </LinearLayout>

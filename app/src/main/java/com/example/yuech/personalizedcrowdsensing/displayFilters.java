@@ -45,14 +45,6 @@ public class displayFilters extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_filters);
-
-        Intent intent = getIntent();
-        buttonId = intent.getIntExtra(MainActivity.BUTTONID, 0);
-
-        filtersNum = 0;
-        showInput = (ListView)findViewById(R.id.showInput);
-        filters =  new ArrayList<String>();
-        filtersAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, filters);
         showInput.setAdapter(filtersAdapter);
     }
 
